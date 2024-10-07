@@ -342,7 +342,7 @@
 
                 if (targetSection) {
                     event.preventDefault();
-                    const offset = window.innerWidth < 769 ? document.querySelector('.navbar').offsetHeight *-1+60: 0;
+                    const offset = window.innerWidth < 769 ? document.querySelector('.navbar').offsetHeight : 0;
                     window.scrollTo({
                         top: targetSection.offsetTop - offset,
                         behavior: "smooth"
