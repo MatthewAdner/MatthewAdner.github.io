@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Derivatives Presentation Slides</title>
+    <!-- Favicon for the browser tab -->
+    <link rel="icon" href="face.png" type="image/png">
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Mobile Navbar with Burger Menu -->
+    <nav class="navbar is-hidden-tablet">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mobile-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="mobile-menu" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <!-- Fixed Vertical Navbar for desktop -->
+                <aside class="menu menu-column is-hidden-mobile">
+                    <div class="navbar-content">
+                        <ul class="menu-list">
+                            <li><a href="index.html" class="has-text-link">Home</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content with adjusted margin to prevent overlap with navbar -->
+                <div class="column main-content">
+                    <!-- PDF Viewer Section -->
+                    <section class="section has-background-light" id="derivatives-pitch-slides">
+                        <div class="container"
+                            style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                            <embed src="sifDerivativesSlides_MatthewAdner.pdf" type="application/pdf" width="80%" height="90%">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mobile Burger Menu Toggle
+            document.querySelector(".navbar-burger").addEventListener("click", function () {
+                document.getElementById("mobile-menu").classList.toggle("is-active");
+            });
+        });
+    </script>
+</body>
+
+</html>
