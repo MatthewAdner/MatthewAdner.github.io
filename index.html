@@ -283,9 +283,12 @@
                                         across different market conditions and help refine future iterations.</p> <br>
 
                                     <figure style="margin: 2rem 0;">
+                                        <a href="project_resources/portfolios_performance_over_time.png" target="_blank">
                                         <img src="project_resources/portfolios_performance_over_time.png"
                                             alt="Portfolio Value Over Time" style="width: 100%;">
-                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                        </a>
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.25rem;">
+                                            (Click for full screen)<br>
                                             <strong>Portfolio Value Over Time. </strong> A line plot comparing the value
                                             of three portfolios based on different strategies, and a fourth benchmark
                                             portfolio linked to the SP500. This visualization helps show the relative
@@ -295,9 +298,12 @@
                                     </figure>
 
                                     <figure style="margin: 2rem 0;">
+                                        <a href="project_resources/trade_count_by_portfolio_by_sector.png" target="_blank">
                                         <img src="project_resources/trade_count_by_portfolio_by_sector.png"
                                             alt="Trades by Sector" style="width: 100%;">
-                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                        </a>
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.25rem;">
+                                            (Click for full screen)<br>
                                             <strong>Trades in each Portfolio by Sector. </strong> Three bar charts, one
                                             for each portfolio, displaying the number of trades made in each sector.
                                             These charts highlight which sectors the strategies were most active in and
@@ -307,14 +313,19 @@
                                     </figure>
 
                                     <figure style="margin: 2rem 0;">
+                                        <a href="project_resources/percentReturn_by_indicator_and_marketCap.png" target="_blank">
+
                                         <img src="project_resources/percentReturn_by_indicator_and_marketCap.png"
                                             alt="Trade-Level Analysis" style="width: 100%;">
-                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                        </a>
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.25rem;">
+                                            (Click for full screen)<br>
                                             <strong>Trade-Level Analysis for Mean Reversion Strategy. </strong> A 3D
                                             scatter plot where each point represents an individual trade in the mean
                                             reversion portfolio. The axes correspond to the market cap of the stock at
                                             entry, the value of the custom indicator, and the return of the trade.
-                                            Points are color-coded by a "CAGR_Bin" variable, indicating whether the
+                                            Points are color-coded by a "CAGR_Bin" (Compouned Annual Growth Rate)
+                                            variable, indicating whether the
                                             trade had a negative return, a positive return that underperformed the
                                             market, or a positive return that outperformed the market. This
                                             visualization helps uncover patterns in how certain types of trades perform
@@ -334,6 +345,85 @@
                                     <p>Summer 2024 – Present</p>
                                 </div>
                             </div>
+
+                            <!-- Project Item: Real Estate Momentum Dashboard -->
+                            <div class="columns mb-5">
+                                <div class="column is-three-quarters">
+                                    <h4 class="title is-5">Real Estate Momentum Dashboard</h4>
+                                    <p>This project is an interactive dashboard that I built in R with the ggplot2,
+                                        tidyverse, DT, and shiny libraries to help visualize momentum trends in U.S.
+                                        real estate markets for Professor Brian Melzer (Tuck School of Business,
+                                        Dartmouth College). It identifies which areas are likely to continue
+                                        outperforming based on past performance and other variables. The dashboard
+                                        allows users to choose features to train a linear model to predict the
+                                        performance of real estate markets over the next term (also selected by the
+                                        user). This data is visualized as a heatmap of predicted top-performing U.S.
+                                        markets over the next term.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Data Sourcing and Processing</strong><br>
+                                        This tool leverages Zillow data on average home prices and rents in different
+                                        real estate markets, combined with CPI data from the Bureau of Labor Statistics
+                                        to adjust prices for inflation. Each real estate market in the dataset
+                                        corresponds to a specific city or county in the U.S.. Historical housing and
+                                        rent data were cleaned and aligned across hundreds of markets. From the raw
+                                        price data, forward returns (used as prediction targets) and past returns (used
+                                        as features) were computed for various time horizons. To allow for
+                                        inflation-adjusted comparisons, prices were converted to real terms using CPI
+                                        multipliers tied to the selected date. </p>
+
+                                    <p style="margin-top: 2rem;"><strong>Predictive Features and Targets</strong><br>
+                                        The dashboard supports flexible feature selection, allowing the user to pick
+                                        which of the following features they want the model to use for prediction:</p>
+                                    <ul>
+                                        <li>Past returns (6-month, 1-year, 5-year)</li>
+                                        <li>Percentile of Past returns (6-month, 1-year, 5-year)</li>
+                                        <li>Price-to-rent ratio</li>
+                                        <li>Real or nominal price</li>
+                                        <li>Region size rank</li>
+                                    </ul>
+                                    <p>The user can pick which of the following targets they want to predict:</p>
+                                    <ul>
+                                        <li>Future returns (6-month, 1-year, 5-year)</li>
+                                        <li>Percentile of Future returns (6-month, 1-year, 5-year)</li>
+                                    </ul>
+                                    <p>These features and targets are passed into a linear model trained on historical
+                                        data available before the selected date, which then outputs a ranked list of
+                                        expected returns by region.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Visualization</strong><br>
+                                        The primary output of the dashboard is a heatmap of the U.S. that shades states
+                                        by their predicted average return over the forward-looking prediction term
+                                        (6-month, 1-year, 5-year). Below the map is a sortable table that displays the
+                                        top regions along with key attributes including those used in the prediction.
+                                    </p>
+
+                                    <figure style="margin: 2rem 0;">
+                                        <a href="project_resources/real_estate_price_data_heatmap_prior_return.png" target="_blank">
+                                        <img src="project_resources/real_estate_price_data_heatmap_prior_return.png"
+                                            alt="Real Estate Heatmap" style="width: 100%;">
+                                        </a>
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.25rem;">
+                                            (Click for full screen)<br>
+                                            <strong>Dashboard Example Usage</strong> This is a screenshot of the
+                                            dashboard showing a prediction of the return over the next 5 years after
+                                            June 2018 based on the region's size rank, price-to-rent ratio, backward
+                                            looking nominal returns from 6 months, 1 year, and 5 years.
+                                        </figcaption>
+                                    </figure>
+
+                                    <p style="margin-top: 2rem;"><strong>Insights and Applications</strong><br>
+                                        This dashboard makes it easy to spot where momentum is strongest across U.S.
+                                        housing markets. Users can fine-tune predictions by layering in valuation
+                                        metrics like price-to-rent ratio and real price levels, helping surface regions
+                                        that may be both trending and undervalued. The tool provides a fast, intuitive
+                                        interface for exploring these patterns and testing custom forecasting setups
+                                        with just a few clicks.</p>
+                                </div>
+                                <div class="column has-text-right is-one-quarter">
+                                    <p>Summer 2023 – Summer 2024</p>
+                                </div>
+                            </div>
+
 
                             <!-- Project Item 2 -->
                             <div class="columns mb-5">
