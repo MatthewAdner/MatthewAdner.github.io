@@ -67,8 +67,8 @@
                                 MATTHEW <span class="last-name">ADNER</span>
                             </h1>
                             <p class="content mt-3">
-                                This site is currently under construction. <br>
-                                Feel free to explore, but keep in mind that there is content missing.
+                                I am still working on this site. <br>
+                                Please look around, but keep in mind that there is content missing.
                             </p>
                             <div class="buttons mt-4">
                                 <a href="https://www.linkedin.com/in/matthewadner/" target="_blank"
@@ -223,12 +223,119 @@
                         </div>
                     </section>
 
+
+
                     <!-- Projects Section -->
                     <section class="section has-background-light" id="projects">
                         <div class="container">
                             <h3 class="title has-text-navy">Projects</h3>
 
-                            <!-- Project Item 1 -->
+                            <!-- Project Item: Quantitative Trading Algorithm and Backtesting System -->
+                            <div class="columns mb-5">
+                                <div class="column is-three-quarters">
+                                    <h4 class="title is-5">Quantitative Trading Algorithm and Backtesting System</h4>
+                                    <p>This project is a custom-coded algorithmic trading system I built from the ground
+                                        up using python and the libraries Pandas, Numpy, Plotly. The goal was to create
+                                        a tool that could scan the market (over 16 million datapoints), identify
+                                        promising opportunities based on indicators, and track simulated trades over
+                                        time.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Data Processing</strong><br>
+                                        This component cleans and aligns data from multiple sources while handling messy
+                                        edge cases, like companies with multiple share classes or that didn't have
+                                        historical price data. The data is formatted as a 3-dimensional dataframe with
+                                        axes representing different stock tickers, different attributes like price or
+                                        indicators, and time. This structure allows operations to be far more
+                                        computationally efficient.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Custom Indicators</strong><br>
+                                        One of the main signals I built measures how far a stock is trading outside of
+                                        its usual range. It combines rolling linear regression and standard deviation
+                                        calculations to flag when price action deviates significantly from recent
+                                        trends.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Stock Selection Logic</strong><br>
+                                        The strategy filters the entire market down to a refined list of tradable stocks
+                                        by combining a custom signal designed to detect abnormal price behavior, other
+                                        quantitative indicators, and a set of rule-based screens. These filters help
+                                        exclude companies with undesirable attributes such as low liquidity or companies
+                                        headquartered in tax haven countries, and apply rolling calculations to smooth
+                                        out noise. The result is a focused subset of equities that stand out for their
+                                        risk/reward profile.</p>
+
+                                    <p style="margin-top: 2rem;"><strong>Portfolio and Trade Tracking</strong><br>
+                                        The portfolio system consists of several interrelated classes. At its core are
+                                        classes that manage individual positions and full portfolios, allowing for
+                                        accurate tracking of trades, position-level metrics, and portfolio-level
+                                        performance over time. These classes are designed to simulate realistic trading
+                                        behavior, including variable position sizing, dynamic position entries and exits
+                                        based on current unrealized profits, losses, and changes in the indicators that
+                                        informed the position entry. The simulation also accounts for variable trading
+                                        costs based on company size and trading volume, allowing for a more accurate
+                                        reflection of real-world execution and slippage.<br>
+                                        In addition, a trade analysis class tracks every trade made during the
+                                        simulation. Once the backtest is complete, it performs a set of analyses on
+                                        portfolio outcomes and trade patterns. It allows users to view performance based
+                                        on a variety of attributes including sector, market cap, indicator, and trade
+                                        duration, making it easier to see where profits and losses came from and which
+                                        subsets of the market the strategy was most profitable over.<br>
+                                        Together, these components make it easy to understand how the strategy behaves
+                                        across different market conditions and help refine future iterations.</p> <br>
+
+                                    <figure style="margin: 2rem 0;">
+                                        <img src="project_resources/portfolios_performance_over_time.png"
+                                            alt="Portfolio Value Over Time" style="width: 100%;">
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                            <strong>Portfolio Value Over Time. </strong> A line plot comparing the value
+                                            of three portfolios based on different strategies, and a fourth benchmark
+                                            portfolio linked to the SP500. This visualization helps show the relative
+                                            performance and volatility of each portfolio and provides an intuitive
+                                            understanding of how the strategies tracked against the broader market.
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure style="margin: 2rem 0;">
+                                        <img src="project_resources/trade_count_by_portfolio_by_sector.png"
+                                            alt="Trades by Sector" style="width: 100%;">
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                            <strong>Trades in each Portfolio by Sector. </strong> Three bar charts, one
+                                            for each portfolio, displaying the number of trades made in each sector.
+                                            These charts highlight which sectors the strategies were most active in and
+                                            provide insight into how different sector exposures may have influenced
+                                            overall performance.
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure style="margin: 2rem 0;">
+                                        <img src="project_resources/percentReturn_by_indicator_and_marketCap.png"
+                                            alt="Trade-Level Analysis" style="width: 100%;">
+                                        <figcaption style="font-size: 0.95em; margin-top: 0.5rem;">
+                                            <strong>Trade-Level Analysis for Mean Reversion Strategy. </strong> A 3D
+                                            scatter plot where each point represents an individual trade in the mean
+                                            reversion portfolio. The axes correspond to the market cap of the stock at
+                                            entry, the value of the custom indicator, and the return of the trade.
+                                            Points are color-coded by a "CAGR_Bin" variable, indicating whether the
+                                            trade had a negative return, a positive return that underperformed the
+                                            market, or a positive return that outperformed the market. This
+                                            visualization helps uncover patterns in how certain types of trades perform
+                                            based on their entry conditions.
+                                        </figcaption>
+                                    </figure>
+
+
+                                    <p style="margin-top: 2rem;"><strong>Next Steps</strong><br>
+                                        While building the backtest system was a great learning experience, future
+                                        versions will use prebuilt frameworks to focus more on strategy development. One
+                                        planned feature is applying NLP to SEC filings. By training a language model on
+                                        company reports and measuring shifts in perplexity, I hope to detect changes in
+                                        tone that signal upcoming stock reversals.</p>
+                                </div>
+                                <div class="column has-text-right is-one-quarter">
+                                    <p>Summer 2024 – Present</p>
+                                </div>
+                            </div>
+
+                            <!-- Project Item 2 -->
                             <div class="columns mb-5">
                                 <div class="column is-three-quarters">
                                     <h4 class="title is-5">Consumer Review Data Analysis with Machine Learning</h4>
@@ -243,9 +350,10 @@
                                     <p>Summer 2021</p>
                                 </div>
                             </div>
-
                         </div>
                     </section>
+
+
 
                     <!-- Education Section -->
                     <section class="section has-background-light" id="education">
